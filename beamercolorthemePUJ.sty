@@ -1,0 +1,72 @@
+% Color style file for the Beamer PUJ Theme
+%
+% Jaime Eduardo Arias Almeida <jearias@javerianacali.edu.co>
+% Tema basado en el beamer-torino-theme <https://github.com/bbatsov/beamer-torino-theme>
+
+
+\mode<presentation>
+
+% Definición de algunos colores
+\definecolor{bluePUJ}{RGB}{35,79,167} 			% Azul utilizado por la universidad
+\definecolor{blueLightPUJ}{RGB}{229,233,242}
+\definecolor{yellowPUJ}{RGB}{255,204,51} 		% Amarillo utilizado por la universidad
+\definecolor{yellowLightPUJ}{RGB}{255,247,222}
+\definecolor{redPUJ}{RGB}{166,35,78}
+\definecolor{redLightPUJ}{RGB}{236,207,217}
+\definecolor{alert}{RGB}{192,0,0}				% Color para el texto de alerta
+
+% Texto normal
+\setbeamercolor{normal text}{fg=black, bg=white}
+
+% Texto Alerta
+\setbeamercolor{alerted text}{fg=alert, bg=white}
+
+% Bullets
+\setbeamercolor{structure}{fg=bluePUJ, bg=white}
+
+% Bloques 
+\setbeamercolor{block title}{fg=white, bg=bluePUJ}
+\setbeamercolor{block body}{parent=normal text, fg=black, bg=blueLightPUJ}
+
+% Bloques de Ejemplo
+\setbeamercolor{block title example}{fg=yellowPUJ!30!black, bg=yellowPUJ}
+\setbeamercolor{block body example}{parent=normal text, fg=black, bg=yellowLightPUJ}
+
+% Bloques Alerta
+\setbeamercolor{block title alerted}{fg=white, bg=redPUJ}
+\setbeamercolor{block body alerted}{parent=normal text, fg=black, bg=redLightPUJ}
+
+% Titulo del frame
+\setbeamercolor{frametitle}{fg=white, bg=black}
+
+% Subtitulo del frame
+\setbeamercolor{framesubtitle}{fg=white, bg=black}
+
+% Titulo Portada
+\setbeamercolor{title}{fg=white, bg=bluePUJ}
+
+% Subtitulo Portada
+\setbeamercolor{subtitle}{fg=white, bg=bluePUJ}
+
+% Fondo
+\setbeamercolor{background canvas}{bg=white}
+
+% Lineas de separacion
+\setbeamercolor{separation line}{fg=bluePUJ, bg=blueLightPUJ}
+\setbeamercolor{fine separation line}{}
+
+%% From the Beamer User Guide:
+% Outer themes base the color of navigational elements and, possibly, also of other elements, on the 
+% four palette colors. The “primary” palette should be used for the most important navigational elements, 
+% which are usually the ones that change most often and hence require the most attention by the audience. 
+% The “secondary” and “tertiary” are less important, the “quaternary” one is least important. 
+% By default, the palette colors do not have a background and the foreground ranges from structure.fg to black. 
+% For the sidebar, there is an extra set of palette colors, see palette sidebar primary.
+
+\setbeamercolor{palette primary}{fg=white, bg=bluePUJ}
+\setbeamercolor{palette secondary}{fg=white, bg=bluePUJ!75!black}
+\setbeamercolor{palette tertiary}{fg=white, bg=bluePUJ!50!black}
+\setbeamercolor{palette quaternary}{fg=white ,bg=black}
+
+\mode
+<all>

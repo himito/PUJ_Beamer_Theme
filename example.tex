@@ -1,0 +1,103 @@
+\documentclass[]{beamer}
+
+% Tema de la Universidad
+\usetheme{PUJ}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8x]{inputenc}
+
+
+\title{Título}
+\subtitle{Subtítulo}
+\author{Nombre del Autor}
+\institute{Pontificia Universidad Javeriana}
+\date{\today}
+
+\begin{document}
+
+% Frame del título
+\begin{frame}[t,plain]
+  	\titlepage
+\end{frame}
+
+\begin{frame}
+	\frametitle{Contenido}
+	\tableofcontents
+\end{frame}
+
+\section{Introducción}
+\begin{frame}
+  \frametitle{Introducción}
+  
+  Aquí va la \alert{introducción\footnote{pie de página}}
+  
+  \begin{enumerate}
+	\item item 1
+  	\item item 2
+  \end{enumerate}
+  
+  \begin{itemize}
+  	\item item1 
+    \item item2 
+  \end{itemize}
+
+  \begin{description}
+  	\item[descripcion1] bla bla bla
+  	\item[descripcion2] bla bla bla 
+  \end{description}
+\end{frame}
+
+\section{Frame1}
+\begin{frame}
+	\frametitle{Frame 1}
+ 
+    \begin{exampleblock}{Ejemplo}
+    	prueba bloque
+  	\end{exampleblock}
+
+  	\begin{block}{Bloque}
+    	prueba bloque
+  	\end{block}
+
+  	\begin{alertblock}{Alerta}
+    	prueba bloque
+  	\end{alertblock}
+\end{frame}
+
+
+\section{Frame 2}
+\begin{frame}
+  \frametitle{Frame 2}
+  \framesubtitle{logo de la Universidad}
+
+  \begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5]{img/pujlogo.pdf}
+    \caption{Logo Universidad}
+  \end{figure}
+
+\end{frame}
+
+
+\section{Frame 3}
+\begin{frame}
+  \frametitle{Frame 3}
+  \framesubtitle{tabla}
+
+  \begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+      \hline
+      \# Columna & \# columna \\
+      \hline \hline
+      columna 1 & columna2 \\
+      columna 1 & columna2 \\
+      \hline
+    \end{tabular}
+    \caption{Tabla prueba}
+  \end{table}
+
+\end{frame}
+
+
+\end{document}

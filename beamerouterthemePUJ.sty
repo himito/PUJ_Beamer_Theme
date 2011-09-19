@@ -1,0 +1,81 @@
+% Outer style file for the Beamer PUJ Theme
+%
+% Jaime Eduardo Arias Almeida <jearias@javerianacali.edu.co>
+% Tema basado en el beamer-torino-theme <https://github.com/bbatsov/beamer-torino-theme>
+
+\mode<presentation>
+
+% Colores
+\setbeamercolor*{line}{parent=palette secondary}
+\setbeamercolor*{page header}{parent=title}
+
+% Distancias
+\newlength{\headerheight}
+\setlength{\headerheight}{.045\paperheight}
+
+% Parte inferior del frame
+\defbeamertemplate*{footline}{PUJ theme}
+{
+   \leavevmode%
+   \hbox{%
+   % Numero del frame 
+   \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex,right]{}%
+       \insertframenumber{} / \inserttotalframenumber
+      \hspace*{2ex} 
+   \end{beamercolorbox}
+  }%
+  \vskip0pt%
+}
+
+% Parte superior del frame
+\defbeamertemplate*{headline}{PUJ theme}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=\headerheight,dp=0pt]{page header}%
+  \end{beamercolorbox}%
+  } %
+  \vskip0pt%
+}
+
+% Título del frame
+\defbeamertemplate*{frametitle}{PUJ theme}[1][left]
+{
+  \ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
+  \@tempdima=\textwidth%
+  \advance\@tempdima by\beamer@leftmargin%
+  \advance\@tempdima by\beamer@rightmargin%
+  \vbox{}\vskip-.5\beamer@leftmargin%
+  
+  \begin{beamercolorbox}[sep=\beamer@leftmargin,#1,wd=\the\@tempdima]{}
+    \usebeamerfont{frametitle}\usebeamercolor[bg]{frametitle}%
+    \vbox{}\vskip0ex%
+    \if@tempswa\else\csname beamer@fte#1\endcsname\fi%
+    \strut\insertframetitle\strut\par%
+    {%
+      \ifx\insertframesubtitle\@empty%
+      \else%
+      {\usebeamerfont{framesubtitle}\usebeamercolor[bg]{framesubtitle}\insertframesubtitle\strut\par}%
+      \fi
+    }%
+    \vskip-1ex%
+    \if@tempswa\else\vskip-\beamer@leftmargin\fi
+  \end{beamercolorbox}%
+  
+  \vskip-.5\beamer@leftmargin%
+  \begin{beamercolorbox}[wd=\textwidth,ht=.1ex,dp=0ex]{line}%
+  \end{beamercolorbox}%
+}
+
+% Frame title continuations, default
+\defbeamertemplate*{frametitle continuation}{PUJ theme}{(\insertcontinuationcount)}
+
+% Logo de la universidad en los frames
+\defbeamertemplate*{sidebar right}{PUJ theme}
+{
+  \vskip.2\beamer@leftmargin%
+  \llap{\includegraphics[height=.1\paperheight]{img/pujlogo2.pdf}\hskip\beamer@leftmargin}
+}
+
+\mode
+<all>

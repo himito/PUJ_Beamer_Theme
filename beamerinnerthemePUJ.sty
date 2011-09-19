@@ -1,0 +1,109 @@
+% Inner style file for the Beamer PUJ Theme
+%
+% Jaime Eduardo Arias Almeida <jearias@javerianacali.edu.co>
+% Tema basado en el beamer-torino-theme <https://github.com/bbatsov/beamer-torino-theme>
+
+\mode<presentation>
+
+% Argumento de los bullets
+\DeclareOptionBeamer{shadow}[true]{\def\beamer@themerounded@shadow{#1}}
+\ExecuteOptionsBeamer{shadow=false}
+\ProcessOptionsBeamer
+
+% Colores
+\setbeamercolor*{title page header}{parent=palette primary}
+
+% Margenes
+\newlength{\beamer@PUJ@normalmargin}
+\setlength{\beamer@PUJ@normalmargin}{.06\paperwidth}
+
+% Margenes del texto
+\setbeamersize{text margin left=\beamer@PUJ@normalmargin}
+\setbeamersize{text margin right=\beamer@PUJ@normalmargin}
+
+% Margenes de los bullets
+\setlength\leftmargini{.6\beamer@PUJ@normalmargin}
+\setlength\leftmarginii{.6\beamer@PUJ@normalmargin}
+\setlength\leftmarginiii{.6\beamer@PUJ@normalmargin}
+
+
+% Plantilla de la página del título
+\defbeamertemplate*{title page normal}{PUJ theme}[1][]
+{
+  {\parskip0pt\offinterlineskip%
+  \hbox{\hskip-\Gm@lmargin\hbox{\vbox{%
+  \@tempdima=\textwidth\textwidth=\paperwidth\hsize=\textwidth\def\\{,}\vbox{}\vskip-1.5ex%
+
+    % Título
+    \begin{beamercolorbox}[wd=\paperwidth,ht=.4\paperheight,center,#1]{title page header}
+      \usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+      \vspace{.125\paperheight}%
+    \end{beamercolorbox}%   
+  }}%  
+  \hskip-\Gm@rmargin%
+  }}
+  \hfil%
+  %
+  \begin{columns}
+          \column{.5\textwidth}
+              % Logo Universidad
+              \begin{centering}
+                  \vbox{}\vfill
+                  \includegraphics[height=.4\paperheight]{img/javeriana.pdf}
+                  \vfill
+              \end{centering}
+          \column{.5\textwidth}
+
+          % Autor
+          \vskip1em\par
+          \begin{beamercolorbox}[sep=8pt,center,#1]{author}
+            \usebeamerfont{author}\insertauthor
+          \end{beamercolorbox}
+
+		  % Instituto 
+          \begin{beamercolorbox}[sep=8pt,center,#1]{institute}
+            \usebeamerfont{institute}\insertinstitute
+          \end{beamercolorbox}
+			
+		  % Fecha
+          \begin{beamercolorbox}[sep=8pt,center,#1]{date}
+            \usebeamerfont{date}\insertdate
+          \end{beamercolorbox}\vskip0.5em
+
+		  % Gráfico
+          {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+
+  \end{columns}
+}
+
+% Seleccionar la plantilla del título
+\defbeamertemplate*{title page}{PUJ}[1][]
+{
+    \usebeamertemplate{title page normal}%
+}
+
+% Plantillas para los bullets
+\defbeamertemplate{itemize item}{circlealt}%
+{\small\raise.2ex\hbox{\donotcoloroutermaths$\bullet$}}
+\defbeamertemplate{itemize subitem}{circlealt}%
+{\small\raise.1ex\hbox{\donotcoloroutermaths$\circ$}}
+\defbeamertemplate{itemize subsubitem}{circlealt}%
+{\scriptsize\raise.1ex\hbox{\donotcoloroutermaths$\bullet$}}
+
+\setbeamertemplate{items}[circlealt]
+
+
+% Plantilla de los bloques
+\setbeamertemplate{blocks}[rounded][shadow=\beamer@themerounded@shadow]
+
+% Plantilla de la tabla de contenidos
+\setbeamertemplate{sections/subsections in toc}[circle]
+
+
+\mode
+<all>
