@@ -73,6 +73,10 @@
 % Logo de la universidad en los frames
 \defbeamertemplate*{sidebar right}{PUJ theme}
 {
+  \ifx\insertframesubtitle\@empty%
+  \else%
+     \vskip.55\beamer@leftmargin%
+  \fi
   \vskip.2\beamer@leftmargin%
   \llap{\includegraphics[height=.1\paperheight]{img/pujlogo2.pdf}\hskip\beamer@leftmargin}
 }
